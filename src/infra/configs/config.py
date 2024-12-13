@@ -49,7 +49,7 @@ class InfrastructureConfig(BaseSettings):
 class Settings(BaseSettings):
     infrastructure: InfrastructureConfig = InfrastructureConfig()
     ambassador_username: str = "shuib420"
-    CREATE_POST_INTERVAL: int = 60
+    CREATE_POST_INTERVAL: int = 4 * 60 * 60
     GORILLA_MARKETING_INTERVAL: int = 4 * 60 * 60
     COMMENT_AGIX_INTERVAL: int = 60 * 60
     ANSWER_DIRECT_INTERVAL: int = 10 * 60
@@ -65,6 +65,7 @@ class Settings(BaseSettings):
     OPEN_AI_MODEL: str = "gpt-4o-2024-08-06"
     LOGS_DIR: str = "../logs"
     TWEETSCOUT_API_KEY:str = "a6660542-6baf-4ae4-9d3d-5f564f73cb5b"
+    ANTHROPIC_API_KEY: str = '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'
 
 
 settings = Settings()
