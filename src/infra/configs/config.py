@@ -1,4 +1,6 @@
-from pydantic import field_validator, ValidationInfo, PostgresDsn, RedisDsn
+from functools import lru_cache
+
+from pydantic import field_validator, ValidationInfo, PostgresDsn, RedisDsn, Field
 from pydantic_settings import BaseSettings
 from dotenv import load_dotenv
 from cryptography.fernet import Fernet
@@ -11,8 +13,9 @@ class InfrastructureConfig(BaseSettings):
     postgres_user: str = "postgres"
     postgres_password: str = "postgres"
     postgres_db: str = "postgres"
-    postgres_host: str = "postgres"
+    postgres_host: str = Field(default="localhost", validation_alias="POSTGRES_HOST")
     postgres_port: int = 5432
+    postgres_logs: bool = False
 
     redis_host: str = "redis"
     redis_port: int = 6379
@@ -21,10 +24,6 @@ class InfrastructureConfig(BaseSettings):
     postgres_dsn: PostgresDsn | None = None
     redis_dsn: RedisDsn | None = None
     fernet_key: bytes = b"glEo_3r7sSMy8tIxqRyvwLW0CrKD44ADJ7qIgWVeOOI="
-
-
-    # FAL AI
-    fal_ai_api_key: str = ""
 
     @field_validator('postgres_dsn', mode='before')
     @classmethod
@@ -67,9 +66,22 @@ class Settings(BaseSettings):
     OPENAI_API_KEY: str = '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'
     OPEN_AI_MODEL: str = "gpt-4o-2024-08-06"
     LOGS_DIR: str = "../logs"
-    TWEETSCOUT_API_KEY:str = "a6660542-6baf-4ae4-9d3d-5f564f73cb5b"
+    TWEETSCOUT_API_KEY: str = "a6660542-6baf-4ae4-9d3d-5f564f73cb5b"
     ANTHROPIC_API_KEY: str = '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'
 
+    # FAL AI
+    fal_ai_api_key: str = ""
 
-settings = Settings()
-cipher = Fernet(settings.infrastructure.fernet_key)
+    # SIWE
+    domain: str = "localhost"
+    jwt_secret_key: str = ""
+    jwt_algorithm: str = "HS256"
+    jwt_access_token_expires_in: int = 1440
+
+
+@lru_cache
+def get_settings() -> Settings:
+    return Settings()  # type: ignore
+
+
+cipher = Fernet(get_settings().infrastructure.fernet_key)
