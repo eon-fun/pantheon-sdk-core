@@ -73,7 +73,7 @@ class Settings(BaseSettings):
     TWITTER_CLIENT_SECRET: str = 'TeK9tRPPirYbpGhiyb_yaOMYJA7ijvCQaU6O5vu5VioA8knBAA'
     TWITTER_BASIC_BEARER_TOKEN: str = 'AAAAAAAAAAAAAAAAAAAAAALFxQEAAAAAteK66aMgMrX%2BoWlqS1nuVBbo834%3DKvDbzJWyE0X6hea56JtvXGPvu58wP31Tym00sFi68RKJ9OqLfj'
     TWITTER_REDIRECT_URI: str = 'http://localhost:8228/api/authenticate/twitter/callback'
-    OPENAI_API_KEY: str = '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'
+    OPENAI_API_KEY: str = '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'
     OPEN_AI_MODEL: str = "gpt-4o-2024-08-06"
     LOGS_DIR: str = "../logs"
     TWEETSCOUT_API_KEY: str = "a6660542-6baf-4ae4-9d3d-5f564f73cb5b"
