@@ -100,7 +100,15 @@ class Settings(BaseSettings):
     LOGS_DIR: str = "../logs"
     TWEETSCOUT_API_KEY: str = "a6660542-6baf-4ae4-9d3d-5f564f73cb5b"
     ANTHROPIC_API_KEY: str = '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'
+
     HEYGEN_API_KEY: str = "Mjg4YTg5MWI2ZmEyNDIxNmI0YmQ5YjMzYmMyZDQ2MmItMTczODIzMDkxMw=="
+
+    LIVEKIT_URL: str = "wss://streamingavatar-o51wm8kk.livekit.cloud"
+    LIVEKIT_API_KEY: str = "APIqYdobFVHDpjs"
+    LIVEKIT_API_SECRET: str = "y5vXmQbuNM8XCd0LE5HtIQ17aT6o2jTKb9fBqeRXGcl"
+
+    TWITCH_CLIENT_ID: str = "d39qf2fhjamywvevtsctdxnrflma20"
+    TWITCH_CLIENT_SECRET: str = "51fkl9bclgwamyfot69wlcrnkz1ajq"
 
     # FAL AI
     fal_ai_api_key: str = ""
