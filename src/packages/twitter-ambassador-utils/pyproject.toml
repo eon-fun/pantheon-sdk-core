@@ -1,12 +1,14 @@
 [project]
-name = "twitter-ambassador-retweet"
+name = "twitter-ambassador-utils"
 version = "0.0.1"
-description = "Package that retweet posts from Twitter"
+description = "Package that consists utils for Twitter Ambassador"
 authors = [
     {name = "k1llzzy",email = "gekachan04@gmail.com"}
 ]
 requires-python = ">=3.10,<4"
-dependencies = []
+dependencies = [
+    "aiohttp (>=3.11.13)"
+]
 readme = "README.md"
 
 [tool.poetry]
