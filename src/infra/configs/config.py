@@ -81,6 +81,16 @@ class TelegramAppSetupServiceConfig(BaseSettings):
     class Config:
         env_prefix = "TELEGRAM_"
 
+class DeployService(BaseSettings):
+    host: str =  Field(default="deploy-service.pantheon.svc.cluster.local") 
+    port: int = Field(default=80)
+    connect_timeout: int = Field(default=10)
+    timeout: int = Field(default=300)
+
+    @property
+    def url(self) -> str:
+        return f"http://{self.host}"
+
 
 class Settings(BaseSettings):
     infrastructure: InfrastructureConfig = InfrastructureConfig()
@@ -98,14 +108,12 @@ class Settings(BaseSettings):
     TWITTER_CLIENT_SECRET: str = '8noXqU32HCtbW-0VIB2bw42Q_ZRdAliBYTq3BAV0nQvwhOTCux'
     TWITTER_BASIC_BEARER_TOKEN: str = 'AAAAAAAAAAAAAAAAAAAAAALFxQEAAAAAteK66aMgMrX%2BoWlqS1nuVBbo834%3DKvDbzJWyE0X6hea56JtvXGPvu58wP31Tym00sFi68RKJ9OqLfj'
 
-    TWITTER_REDIRECT_URI: str = 'https://dev.pntheon.ai/twitter/oauth/callback/'
+    TWITTER_REDIRECT_URI: str = 'http://185.53.46.123:3001/api/oauth/twitter/callback'
     OPENAI_API_KEY: str = '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'
     OPEN_AI_MODEL: str = "gpt-4o-2024-08-06"
     LOGS_DIR: str = "../logs"
     TWEETSCOUT_API_KEY: str = "a6660542-6baf-4ae4-9d3d-5f564f73cb5b"
     ANTHROPIC_API_KEY: str = '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'
-    TELEGRAM_BOT_TOKEN: str = "8039253205:AAEFwlG0c2AmhwIXnqC9Q5TsBo_x-7jM2a0"
-    TELEGRAM_CHANNEL_ID: str = "@panteoncryptonews"
 
     HEYGEN_API_KEY: str = "Mjg4YTg5MWI2ZmEyNDIxNmI0YmQ5YjMzYmMyZDQ2MmItMTczODIzMDkxMw=="
 
@@ -133,11 +141,21 @@ class Settings(BaseSettings):
     creativity_api_key: str = Field(validation_alias="CREATIVITY_API_KEY")
     creativity_base_url: str = "https://api.creatify.ai/api"
 
-    confluent_api_key: str
-    confluent_api_secret: str
-    confluent_bootstrap_server: str
-    confluent_rest_endpoint: str
+    # confluent_api_key: str = '1'
+    # confluent_api_secret: str = '1'
+    # confluent_bootstrap_server: str = '1'
+    # confluent_rest_endpoint: str = '1'
+    
+    AI_REGISTRY_HOST: str = Field(default="pantheon-dev-ai-registry.pantheon.svc.cluster.local")
+    AI_REGISTRY_PORT: int = Field(default=8080)
 
+    deploy_service: DeployService = DeployService()
+    
+    @property
+    def ai_registry_url(self) -> str:
+        return f"http://{self.AI_REGISTRY_HOST}:{self.AI_REGISTRY_PORT}"
+        
+    
     REDIS_PERSONA_KEY: str = "available_personas"
 
 @lru_cache
