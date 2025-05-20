@@ -115,8 +115,6 @@ class Settings(BaseSettings):
     LOGS_DIR: str = "../logs"
     TWEETSCOUT_API_KEY: str = "a6660542-6baf-4ae4-9d3d-5f564f73cb5b"
     ANTHROPIC_API_KEY: str = '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'
-    TELEGRAM_BOT_TOKEN: str = "8039253205:AAEFwlG0c2AmhwIXnqC9Q5TsBo_x-7jM2a0"
-    TELEGRAM_CHANNEL_ID: str = "@panteoncryptonews"
 
     HEYGEN_API_KEY: str = "Mjg4YTg5MWI2ZmEyNDIxNmI0YmQ5YjMzYmMyZDQ2MmItMTczODIzMDkxMw=="
 
