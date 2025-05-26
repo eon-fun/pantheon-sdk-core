@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "pantheon-analysis-utils"
+version = "0.1.0"
+description = "Analysis utilities for Pantheon AI platform"
+authors = ["Pantheon AI Team"]
+readme = "README.md"
+packages = [{include = "*"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

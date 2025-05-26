@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "pantheon-media-utils"
+version = "0.1.0"
+description = "Media processing utilities for Pantheon AI platform"
+authors = ["Pantheon AI Team"]
+readme = "README.md"
+packages = [{include = "*"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
