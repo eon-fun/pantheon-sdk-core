@@ -1,0 +1,26 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PodMonitor
+metadata:
+  labels:
+    release: {{ .Values.prometheusRelease }}
+  name: {{ include "data-provider.rayServiceName" . }}-worker-monitor
+spec:
+  jobLabel: {{ include "data-provider.providerName" . }}-worker
+  namespaceSelector:
+    matchNames:
+    - {{ .Release.Namespace }}
+  podMetricsEndpoints:
+    - port: metrics
+      path: /metrics
+      interval: 30s
+      relabelings:
+        - sourceLabels:
+            - __meta_kubernetes_pod_label_ray_io_cluster
+          targetLabel: ray_io_cluster
+        - action: replace
+          sourceLabels:
+            - __meta_kubernetes_pod_label_provider
+          targetLabel: provider
+  selector:
+    matchLabels:
+      ray.io/node-type: worker

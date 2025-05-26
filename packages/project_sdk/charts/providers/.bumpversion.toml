@@ -1,0 +1,19 @@
+[tool.bumpversion]
+current_version = "0.2.5"
+message = "Bump version of data-provider: {current_version} -> {new_version}"
+tag_name = "charts/data-provider-v{new_version}"
+commit = false
+tag = false
+parse = "(?P<major>\\d+)\\.(?P<minor>\\d+)\\.(?P<patch>\\d+)(\\+(?P<branch>.*))?"
+serialize = ["{major}.{minor}.{patch}+{branch}", "{major}.{minor}.{patch}"]
+
+[[tool.bumpversion.files]]
+filename = "Chart.yaml"
+search = "version: {current_version}"
+replace = "version: {new_version}"
+
+
+[[tool.bumpversion.files]]
+filename = "../../providers/Chart.yaml"
+search = "name: data-provider\n    version: {current_version}"
+replace = "name: data-provider\n    version: {new_version}"
