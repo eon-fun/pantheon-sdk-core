@@ -11,7 +11,7 @@ on:
         required: true
 
 env:
-  POETRY_REPOSITORIES_EON_URL: https://packages.pypi.pntheon.ai/simple/
+  POETRY_REPOSITORIES_EON_URL: https://packages.pypi.pntheon.ai
   POETRY_HTTP_BASIC_EON_USERNAME: eon
 
 jobs:
