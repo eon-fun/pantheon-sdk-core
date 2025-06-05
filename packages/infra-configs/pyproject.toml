@@ -1,6 +1,6 @@
 [project]
 name = "infra-configs"
-version = "0.0.1"
+version = "0.0.3"
 description = "Package that consists infrastructure configs"
 authors = [
     { name = "k1llzzy", email = "gekachan04@gmail.com" }
