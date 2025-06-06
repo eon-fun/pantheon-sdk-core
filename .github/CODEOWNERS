@@ -1,20 +1,20 @@
 # This file defines code owners for the PanthEON SDK repository
 # Code owners are automatically requested for review when someone opens a PR
 
-* @golemxiv @k1llzz @polkadot21
+* @GolemXlV @k1llzz @polkadot21
 
 /docs/ @polkadot21 @k1llzz
 *.md @polkadot21 @k1llzz
 /README.md @polkadot21 @k1llzz
 
-/pyproject.toml @golemxiv @drobotukhin
-/poetry.lock @golemxiv @drobotukhin
-/.github/ @golemxiv @drobotukhin
+/pyproject.toml @GolemXlV @drobotukhin
+/poetry.lock @GolemXlV @drobotukhin
+/.github/ @GolemXlV @drobotukhin
 
-/scripts/ @golemxiv @drobotukhin
+/scripts/ @GolemXlV @drobotukhin
 
-/packages/ @golemxiv @k1llzz
+/packages/ @GolemXlV @k1llzz
 
-/.github/workflows/ @golemxiv @drobotukhin
+/.github/workflows/ @GolemXlV @drobotukhin
 
-/LICENSE @golemxiv @k1llzz @polkadot21 @drobotukhin
+/LICENSE @GolemXlV @k1llzz @polkadot21 @drobotukhin
