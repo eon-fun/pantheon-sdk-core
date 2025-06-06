@@ -3,18 +3,18 @@
 
 * @GolemXlV @k1llzz @polkadot21
 
-/docs/ @polkadot21 @k1llzz
-*.md @polkadot21 @k1llzz
-/README.md @polkadot21 @k1llzz
+/docs/ @GolemXlV @polkadot21 @k1llzz
+*.md @GolemXlV @polkadot21 @k1llzz
+/README.md @GolemXlV @polkadot21 @k1llzz
 
-/pyproject.toml @GolemXlV @drobotukhin
-/poetry.lock @GolemXlV @drobotukhin
-/.github/ @GolemXlV @drobotukhin
+/pyproject.toml @GolemXlV @mrvladd-d
+/poetry.lock @GolemXlV @mrvladd-d
+/.github/ @GolemXlV @mrvladd-d
 
-/scripts/ @GolemXlV @drobotukhin
+/scripts/ @GolemXlV @mrvladd-d
 
 /packages/ @GolemXlV @k1llzz
 
-/.github/workflows/ @GolemXlV @drobotukhin
+/.github/workflows/ @GolemXlV @mrvladd-d
 
-/LICENSE @GolemXlV @k1llzz @polkadot21 @drobotukhin
+/LICENSE @GolemXlV @k1llzz @polkadot21 @mrvladd-d
